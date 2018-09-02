@@ -1,0 +1,119 @@
+<project name="uniwiki" default="war" basedir=".">
+
+  <property name="src"            value="${basedir}"/>
+  <property name="webinf"         value="${basedir}/WEB-INF"/>
+  <property name="webinf.lib"     value="${webinf}/lib"/>
+  <property name="webinf.classes" value="${webinf}/classes"/>
+  <property name="webinf.classes.metainf" value="${webinf}/classes/META-INF"/>
+  <property name="war"            value="${basedir}/${ant.project.name}.war" />
+  <property name="distdir"        value="${basedir}/dist" />
+  <property name="javac.debug"    value="true" />
+  <property name="javac.optimize" value="true" />
+  <property name="javac.deprecation" value="true" />
+
+
+  <target name="classpath">
+    <mkdir dir="${webinf.lib}"/>
+    <path id="classpath">
+      <fileset dir="${webinf.lib}">
+        <include name="*.jar"/>
+      </fileset>
+    </path>
+
+    <property name="expanded.classpath" refid="classpath"/>
+    <echo message="classpath=${expanded.classpath}" level="info"/>
+ </target>
+
+
+  <target name="classes" depends="classpath" description="Compile classes">
+    <subant>
+   	<fileset dir="." includes="*/build.xml"/>
+     </subant>
+
+    <mkdir dir="${webinf.classes}"/>
+    <mkdir dir="${webinf.classes.metainf}"/>
+
+    <javac srcdir="${src}"
+           destdir="${webinf.classes}"
+           debug="${javac.debug}"
+           optimize="${javac.optimize}"
+           deprecation="${javac.deprecation}"
+           >
+       <classpath>
+         <path refid="classpath"/>
+       </classpath>
+
+       <include name="**/*.java"/>
+    </javac>
+
+    <delete dir="${distdir}"/>
+    <mkdir dir="${distdir}"/>
+    <mkdir dir="${distdir}/images"/>
+    <mkdir dir="${distdir}/META-INF"/>
+    <mkdir dir="${distdir}/WEB-INF"/>
+    <mkdir dir="${distdir}/css"/>
+
+    <copy todir="${distdir}/images">
+       <fileset dir="${basedir}/images" />
+    </copy>
+
+    <copy todir="${distdir}/META-INF">
+       <fileset dir="${basedir}/meta-inf" />
+    </copy>
+
+   <copy todir="${distdir}/css">
+       <fileset dir="${basedir}/css" />
+    </copy>
+    
+    <copy todir="${distdir}">
+       <fileset dir="${basedir}/">
+        <include name="*.jsp"/>
+        <include name="*.html"/>
+       </fileset>
+    </copy>
+  
+  <copy file="./META-INF/aop.xml" todir="${webinf.classes.metainf}"></copy>
+  
+    <jar jarfile="${basedir}/WEB-INF/lib/uniwiki.jar"
+         basedir="${basedir}/WEB-INF/classes"
+         includes="**" >
+    </jar>   
+
+
+    <copy todir="${distdir}/WEB-INF">
+       <fileset dir="${basedir}/WEB-INF">
+        <include name="**/*.properties"/>
+        <include name="**/*.script"/>
+        <include name="**/*.xml"/>
+        <include name="**/*.lst"/>
+        <include name="**/*.wsdd"/>
+        <include name="**/*.class"/>
+        <include name="**/*.jar"/>
+        <exclude name="**/aspectwerkz*.jar"/>
+       </fileset>
+    </copy>
+
+  </target>
+
+  <target name="war" depends="classes" description="build WAR">
+    <war destfile="${war}"
+         webxml="${webinf}/web.xml"
+         basedir="${distdir}">
+      <exclude name="build.xml"/>
+      <exclude name="WEB-INF/web.xml"/>
+      <exclude name="**/CVS/**"/>
+      <exclude name="src/**"/>
+    </war>
+  </target>
+
+  <target name="clean" description="Remove generated files">
+    <delete file="${war}" quiet="false"/>
+    <delete dir="${webinf.classes}"/>
+    <delete dir="${webinf.lib}"/>
+  </target>
+
+</project>
+
+
+
+

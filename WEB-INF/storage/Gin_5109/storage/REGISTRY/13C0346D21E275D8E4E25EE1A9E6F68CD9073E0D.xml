@@ -1,0 +1,97 @@
+<bunshin.util.Pair>
+  <key class="rice.pastry.Id">
+    <Id>
+      <int>-653836787</int>
+      <int>-1444481396</int>
+      <int>-454926623</int>
+      <int>568489432</int>
+      <int>331363437</int>
+    </Id>
+  </key>
+  <values class="damon.registry.RegistryRecord">
+    <value class="string">damon</value>
+    <url>damon.distributed.aspects</url>
+    <parent>p2p://</parent>
+    <writers>
+      <rice.pastry.socket.SocketNodeHandle serialization="custom">
+        <rice.pastry.NodeHandle>
+          <default/>
+        </rice.pastry.NodeHandle>
+        <rice.pastry.dist.DistNodeHandle>
+          <default>
+            <nodeId>
+              <Id>
+                <int>1681948292</int>
+                <int>-527851732</int>
+                <int>-445128118</int>
+                <int>509024163</int>
+                <int>290899986</int>
+              </Id>
+            </nodeId>
+          </default>
+        </rice.pastry.dist.DistNodeHandle>
+        <rice.pastry.socket.SocketNodeHandle>
+          <default>
+            <eaddress>
+              <address>
+                <java.net.InetSocketAddress serialization="custom">
+                  <java.net.InetSocketAddress>
+                    <default>
+                      <port>5709</port>
+                      <addr class="java.net.Inet4Address" resolves-to="java.net.InetAddress">
+                        <hostName>Gin</hostName>
+                        <address>-1062731233</address>
+                        <family>2</family>
+                      </addr>
+                    </default>
+                  </java.net.InetSocketAddress>
+                </java.net.InetSocketAddress>
+              </address>
+              <epoch>3435120237733572552</epoch>
+            </eaddress>
+          </default>
+        </rice.pastry.socket.SocketNodeHandle>
+      </rice.pastry.socket.SocketNodeHandle>
+      <rice.pastry.socket.SocketNodeHandle serialization="custom">
+        <rice.pastry.NodeHandle>
+          <default/>
+        </rice.pastry.NodeHandle>
+        <rice.pastry.dist.DistNodeHandle>
+          <default>
+            <nodeId>
+              <Id>
+                <int>1963755842</int>
+                <int>-770737992</int>
+                <int>-290079590</int>
+                <int>-488050731</int>
+                <int>-890346940</int>
+              </Id>
+            </nodeId>
+          </default>
+        </rice.pastry.dist.DistNodeHandle>
+        <rice.pastry.socket.SocketNodeHandle>
+          <default>
+            <eaddress>
+              <address>
+                <java.net.InetSocketAddress serialization="custom">
+                  <java.net.InetSocketAddress>
+                    <default>
+                      <port>5009</port>
+                      <addr class="java.net.Inet4Address" resolves-to="java.net.InetAddress">
+                        <hostName>Gin</hostName>
+                        <address>-1062731233</address>
+                        <family>2</family>
+                      </addr>
+                    </default>
+                  </java.net.InetSocketAddress>
+                </java.net.InetSocketAddress>
+              </address>
+              <epoch>4620402113720539131</epoch>
+            </eaddress>
+          </default>
+        </rice.pastry.socket.SocketNodeHandle>
+      </rice.pastry.socket.SocketNodeHandle>
+    </writers>
+    <children/>
+  </values>
+</bunshin.util.Pair>

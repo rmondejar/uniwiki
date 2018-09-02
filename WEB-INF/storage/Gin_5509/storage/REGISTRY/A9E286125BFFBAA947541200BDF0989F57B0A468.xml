@@ -1,0 +1,61 @@
+<bunshin.util.Pair>
+  <key class="rice.pastry.Id">
+    <Id>
+      <int>1471194216</int>
+      <int>-1108305761</int>
+      <int>1196691968</int>
+      <int>1543486121</int>
+      <int>-1444772334</int>
+    </Id>
+  </key>
+  <values class="damon.registry.RegistryRecord">
+    <value class="string">void</value>
+    <url>p2p://</url>
+    <parent></parent>
+    <writers>
+      <rice.pastry.socket.SocketNodeHandle serialization="custom">
+        <rice.pastry.NodeHandle>
+          <default/>
+        </rice.pastry.NodeHandle>
+        <rice.pastry.dist.DistNodeHandle>
+          <default>
+            <nodeId>
+              <Id>
+                <int>1963755842</int>
+                <int>-770737992</int>
+                <int>-290079590</int>
+                <int>-488050731</int>
+                <int>-890346940</int>
+              </Id>
+            </nodeId>
+          </default>
+        </rice.pastry.dist.DistNodeHandle>
+        <rice.pastry.socket.SocketNodeHandle>
+          <default>
+            <eaddress>
+              <address>
+                <java.net.InetSocketAddress serialization="custom">
+                  <java.net.InetSocketAddress>
+                    <default>
+                      <port>5009</port>
+                      <addr class="java.net.Inet4Address" resolves-to="java.net.InetAddress">
+                        <hostName>Gin</hostName>
+                        <address>-1062731233</address>
+                        <family>2</family>
+                      </addr>
+                    </default>
+                  </java.net.InetSocketAddress>
+                </java.net.InetSocketAddress>
+              </address>
+              <epoch>4620402113720539131</epoch>
+            </eaddress>
+          </default>
+        </rice.pastry.socket.SocketNodeHandle>
+      </rice.pastry.socket.SocketNodeHandle>
+    </writers>
+    <children>
+      <string>p2p://uniwiki</string>
+      <string>p2p://damon.distributed.aspects</string>
+    </children>
+  </values>
+</bunshin.util.Pair>

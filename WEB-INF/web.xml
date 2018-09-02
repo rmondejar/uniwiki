@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app 
+   xmlns="http://java.sun.com/xml/ns/javaee" 
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" 
+   version="2.5">
+  
+    <display-name>uniwiki</display-name>
+      
+    <session-config>
+<session-timeout>5</session-timeout>
+</session-config> 
+     <servlet>
+    	<servlet-name>startup</servlet-name> 
+	    <servlet-class>uniwiki.servlet.StartupServlet</servlet-class> 
+	    <load-on-startup>0</load-on-startup> 
+     </servlet>  
+</web-app>
